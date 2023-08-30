@@ -24,12 +24,12 @@ public class Mapper {
         userResponseDto.setId(user.getId());
         userResponseDto.setFirstname(user.getFirstname());
         userResponseDto.setLastname(user.getLastname());
-        List<String> namePosts = new ArrayList<>();
+        List<Long> namePosts = new ArrayList<>();
         List<Post> posts = user.getPosts();
         for (Post post : posts) {
-            namePosts.add(post.getTitle());
+            namePosts.add(post.getId());
         }
-        userResponseDto.setNamePosts(namePosts);
+        userResponseDto.setPostIds(namePosts);
         return userResponseDto;
     }
 }
