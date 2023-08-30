@@ -30,6 +30,8 @@ public class Mapper {
             namePosts.add(post.getId());
         }
         userResponseDto.setPostIds(namePosts);
+        userResponseDto.setImageNames(user.getImage().getName());
+//        String nameImage =
         return userResponseDto;
     }
 }

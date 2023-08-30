@@ -1,4 +1,4 @@
-package ru.vladbstrv.proftips.demo;
+package ru.vladbstrv.proftips.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

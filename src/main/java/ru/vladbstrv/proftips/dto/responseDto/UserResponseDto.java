@@ -10,4 +10,5 @@ public class UserResponseDto {
     private String firstname;
     private String lastname;
     private List<Long> postIds;
+    private String imageNames;
 }

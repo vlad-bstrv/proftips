@@ -20,6 +20,9 @@ public class User {
     private String lastname;
     private String email;
     private String password;
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "image_name")
+    private Image image;
 
     @OneToMany(
             mappedBy = "user",
