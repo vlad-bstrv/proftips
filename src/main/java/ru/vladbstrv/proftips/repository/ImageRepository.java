@@ -6,7 +6,8 @@ import ru.vladbstrv.proftips.model.Image;
 
 import java.util.Optional;
 
-public interface ImageRepository  extends JpaRepository<Image, Long> {
-    @Transactional
-    Optional<Image> findByName(String fileName);
+public interface ImageRepository  //extends JpaRepository<Image, Long>
+{
+//    @Transactional
+//    Optional<Image> findByName(String fileName);
 }

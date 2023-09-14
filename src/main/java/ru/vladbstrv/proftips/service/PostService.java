@@ -7,6 +7,7 @@ import ru.vladbstrv.proftips.dto.responseDto.PostResponseDto;
 import ru.vladbstrv.proftips.model.Post;
 import ru.vladbstrv.proftips.model.User;
 import ru.vladbstrv.proftips.repository.PostRepository;
+import ru.vladbstrv.proftips.service.impl.UserServiceImpl;
 
 import java.time.LocalDateTime;
 
@@ -14,21 +15,20 @@ import java.time.LocalDateTime;
 public class PostService {
 
     private final PostRepository postRepository;
-    private final UserService userService;
+    private final UserServiceImpl userService;
 
-    public PostService(PostRepository postRepository, UserService userService) {
+    public PostService(PostRepository postRepository, UserServiceImpl userService) {
         this.postRepository = postRepository;
         this.userService = userService;
     }
 
-    public PostResponseDto addPost(PostRequestDto postRequestDto) {
+    public PostResponseDto addPost(PostRequestDto postRequestDto, Long userId) {
         Post post = new Post();
         post.setTitle(postRequestDto.getTitle());
         post.setContent(postRequestDto.getContent());
-        User user = userService.getUser(postRequestDto.getUserId());
+        User user = userService.getUser(userId);
         post.setUser(user);
         post.setCreatedAt(LocalDateTime.now());
-
         Post post1 = postRepository.save(post);
         return Mapper.postToPostResponseDto(post1);
     }

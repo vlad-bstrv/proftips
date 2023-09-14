@@ -1,0 +1,14 @@
+cloud:
+  aws:
+    credentials:
+      access-key: 273417_Aniya
+      secret-key: 1#gIoi#4nP
+    region:
+      static: ru-1
+    stack:
+      auto:false
+
+application:
+  bucket:
+    name: proftips
+

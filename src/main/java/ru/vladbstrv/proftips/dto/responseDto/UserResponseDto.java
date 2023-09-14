@@ -9,6 +9,7 @@ public class UserResponseDto {
     private Long id;
     private String firstname;
     private String lastname;
+    private String email;
     private List<Long> postIds;
-    private String imageNames;
+    private String urlImage;
 }

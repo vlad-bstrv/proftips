@@ -24,14 +24,14 @@ public class Mapper {
         userResponseDto.setId(user.getId());
         userResponseDto.setFirstname(user.getFirstname());
         userResponseDto.setLastname(user.getLastname());
+        userResponseDto.setUrlImage(user.getAvatar());
+        userResponseDto.setEmail(user.getEmail());
         List<Long> namePosts = new ArrayList<>();
         List<Post> posts = user.getPosts();
         for (Post post : posts) {
             namePosts.add(post.getId());
         }
         userResponseDto.setPostIds(namePosts);
-        userResponseDto.setImageNames(user.getImage().getName());
-//        String nameImage =
         return userResponseDto;
     }
 }
